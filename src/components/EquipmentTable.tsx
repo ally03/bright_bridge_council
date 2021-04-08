@@ -2,7 +2,7 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { zephyrs, colours } from '../utils';
 
-const rowColor = (NO2: number, PM25: number) => colours.find(({ value }) => value === (NO2 + PM25) / 2)?.hex
+const rowColor = (NO2: number, PM25: number) => colours.find(({ value }) => value === Math.round((NO2 + PM25) / 2))?.hex
 function EquipmentTable(props: { type: string; }) {
   const bridgeBridgeOwned = zephyrs.filter(({ currentlyOwned }) => currentlyOwned);
 
