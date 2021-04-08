@@ -4,6 +4,8 @@ import zephyrs from '../utils';
 
 function EquipmentTable() {
   const bridgeBridgeOwned = zephyrs.filter(({ currentlyOwned }) => currentlyOwned)
+  const equimentSortByType = bridgeBridgeOwned.sort((a, b) => b.type.localeCompare(a.type))
+  console.log('equ', equimentSortByType)
   return (
     <Table striped bordered hover>
       <thead>
