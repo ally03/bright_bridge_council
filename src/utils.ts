@@ -187,4 +187,4 @@ const colours: Colour[] = [
 ];
 
 
-export {};
+export default zephyrs;

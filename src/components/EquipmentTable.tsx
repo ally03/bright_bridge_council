@@ -1,5 +1,6 @@
 import React from 'react';
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
+import zephyrs from '../utils';
 
 function EquipmentTable() {
     return (
@@ -7,24 +8,25 @@ function EquipmentTable() {
         <thead>
           <tr>
             <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Battery Percentage</th>
+            <th>NO2</th>
+            <th>PM25</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
+         { zephyrs.map(({name, type, batteryPercentage, NO2, PM25}, index) => {
+          return( 
+            <tr key={index}>
+             <td>{index + 1}</td>
+             <td>{name}</td>
+             <td>{type}</td>
+             <td>{batteryPercentage}</td>
+             <td>{NO2}</td>
+             <td>{PM25}</td>
+           </tr>
+         )})}
         </tbody>
       </Table>
     );
