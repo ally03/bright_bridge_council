@@ -14,7 +14,6 @@ function EquipmentTable(props: { type: string; }) {
   const equimentSortByType = isAllEquipmentSelected ?
     userSelectedType.sort((a, b) => b.type.localeCompare(a.type)) : userSelectedType;
 
-  console.log('equ', equimentSortByType)
   return (
     <Table striped borderless hover>
       <thead style={{ backgroundColor: 'slategray' }}>
